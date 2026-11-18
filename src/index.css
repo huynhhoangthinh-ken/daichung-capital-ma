@@ -1,0 +1,241 @@
+@import "tailwindcss";
+
+:root,
+:root[data-theme="dark"] {
+  --bg-page: #070A10;
+  --bg-alt: #090E18;
+  --bg-footer: #05070C;
+  --bg-topbar: rgba(5, 7, 12, 0.92);
+  --bg-header: rgba(7, 10, 16, 0.86);
+  --bg-surface: #0D1320;
+  --bg-surface-hover: #121B2E;
+  --bg-elevated: #11192C;
+  --bg-inset: #080C15;
+  --bg-pill-group: #0E1525;
+  --bg-modal: #0B101C;
+  --bg-backdrop: rgba(2, 5, 11, 0.82);
+
+  --text-primary: #F8FAFC;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+
+  --gold-accent: #C9A461;
+  --gold-text: #E6C98F;
+  --gold-soft-bg: rgba(201, 164, 97, 0.14);
+  --gold-border: rgba(201, 164, 97, 0.28);
+  --gold-border-strong: rgba(201, 164, 97, 0.52);
+
+  --emerald-text: #6EE7B7;
+  --emerald-soft-bg: rgba(16, 185, 129, 0.12);
+  --emerald-border: rgba(16, 185, 129, 0.32);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-input: rgba(255, 255, 255, 0.14);
+  --grid-line: rgba(201, 164, 97, 0.045);
+
+  --card-shadow: 0 16px 44px rgba(0, 0, 0, 0.45);
+  --panel-bg: linear-gradient(180deg, rgba(19, 27, 42, 0.86) 0%, rgba(12, 17, 28, 0.94) 100%);
+  --gold-gradient-text: linear-gradient(135deg, #F2DCB1 0%, #C9A461 48%, #9E7938 100%);
+}
+
+:root[data-theme="light"] {
+  --bg-page: #F7F5F0;
+  --bg-alt: #EFECE4;
+  --bg-footer: #EAE6DC;
+  --bg-topbar: rgba(239, 236, 228, 0.95);
+  --bg-header: rgba(247, 245, 240, 0.90);
+  --bg-surface: #FFFFFF;
+  --bg-surface-hover: #FAF8F3;
+  --bg-elevated: #F5F1E8;
+  --bg-inset: #F2EFE7;
+  --bg-pill-group: #E6E1D5;
+  --bg-modal: #FFFFFF;
+  --bg-backdrop: rgba(15, 23, 42, 0.55);
+
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #526075;
+  --text-subtle: #64748B;
+
+  --gold-accent: #9E762E;
+  --gold-text: #855F1C;
+  --gold-soft-bg: rgba(158, 118, 46, 0.11);
+  --gold-border: rgba(158, 118, 46, 0.26);
+  --gold-border-strong: rgba(158, 118, 46, 0.55);
+
+  --emerald-text: #047857;
+  --emerald-soft-bg: rgba(4, 120, 87, 0.09);
+  --emerald-border: rgba(4, 120, 87, 0.26);
+
+  --border-subtle: rgba(15, 23, 42, 0.09);
+  --border-input: rgba(15, 23, 42, 0.16);
+  --grid-line: rgba(158, 118, 46, 0.075);
+
+  --card-shadow: 0 14px 36px rgba(15, 23, 42, 0.07);
+  --panel-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 243, 0.98) 100%);
+  --gold-gradient-text: linear-gradient(135deg, #A97E32 0%, #87601B 52%, #684810 100%);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .font-serif-luxury {
+    font-family: 'Cormorant Garamond', 'Noto Serif SC', Georgia, serif;
+  }
+
+  .font-mono-finance {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+}
+
+/* Semantic Luxury Theme Utilities */
+.dcc-page {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+}
+
+.dcc-section-alt {
+  background-color: var(--bg-alt);
+}
+
+.dcc-footer {
+  background-color: var(--bg-footer);
+}
+
+.dcc-surface {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--card-shadow);
+}
+
+.dcc-surface-gold {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--gold-border);
+  box-shadow: var(--card-shadow);
+}
+
+.dcc-inset {
+  background-color: var(--bg-inset);
+  border: 1px solid var(--border-subtle);
+}
+
+.dcc-input {
+  background-color: var(--bg-inset);
+  border: 1px solid var(--border-input);
+  color: var(--text-primary);
+}
+
+.dcc-input::placeholder {
+  color: var(--text-subtle);
+}
+
+.dcc-input:focus {
+  border-color: var(--gold-accent);
+  outline: none;
+}
+
+.dcc-text-primary {
+  color: var(--text-primary);
+}
+
+.dcc-text-secondary {
+  color: var(--text-secondary);
+}
+
+.dcc-text-muted {
+  color: var(--text-muted);
+}
+
+.dcc-text-subtle {
+  color: var(--text-subtle);
+}
+
+.dcc-text-gold {
+  color: var(--gold-text);
+}
+
+.dcc-text-emerald {
+  color: var(--emerald-text);
+}
+
+.dcc-badge-gold {
+  background-color: var(--gold-soft-bg);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-text);
+}
+
+.dcc-badge-emerald {
+  background-color: var(--emerald-soft-bg);
+  border: 1px solid var(--emerald-border);
+  color: var(--emerald-text);
+}
+
+.dcc-divider {
+  border-color: var(--border-subtle);
+}
+
+.text-gold-gradient {
+  background: var(--gold-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #DFBF82 0%, #C9A461 50%, #A98341 100%);
+  color: #070A10;
+}
+
+.bg-gold-gradient:hover {
+  background: linear-gradient(135deg, #EAD09D 0%, #D4B06E 50%, #B8914D 100%);
+}
+
+.glass-panel {
+  background: var(--panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--gold-border);
+  box-shadow: var(--card-shadow);
+}
+
+.glass-header {
+  background: var(--bg-header);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.institutional-grid-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-border-strong);
+  border-radius: 4px;
+}
+
+@keyframes pulseSlow {
+  0%, 100% { opacity: 0.45; }
+  50% { opacity: 0.85; }
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
